@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace ScrollingLabel.ViewModels
 {
-    public class CustomerListViewModel : ViewModelBase, ICustomerListViewModel
+    internal class CustomerListViewModel : ViewModelBase, ICustomerListViewModel
     {
         private ObservableCollection<ICustomerListItemViewModel> _customers = new ObservableCollection<ICustomerListItemViewModel>();
 
