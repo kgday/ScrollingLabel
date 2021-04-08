@@ -1,0 +1,28 @@
+<rxui:ReactiveUserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ScrollingLabel.Views.CustomerListView"
+             xmlns:vm="clr-namespace:ScrollingLabel.ViewModels;assembly=ScrollingLabel.Core"
+             xmlns:rxui="http://reactiveui.net"
+             x:TypeArguments="vm:ICustomerListViewModel"
+             xmlns:designVM="clr-namespace:ScrollingLabel.Design.ViewModels;assembly=ScrollingLabel.Design" 
+             x:DataType="vm:ICustomerListViewModel"
+              x:CompileBindings="True"
+>
+  <Design.DataContext>
+    <designVM:CustomerListViewModelDesign/>
+  </Design.DataContext>
+  <Grid>
+    <ScrollViewer x:Name="CustomersScrollViewer" AllowAutoHide="False">
+      <ItemsControl x:Name="CustomersListControl" Items="{Binding Customers}" Margin="0,0,20,0">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <rxui:ViewModelViewHost ViewModel="{Binding}"  HorizontalContentAlignment="Stretch"/>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
+  </Grid>
+</rxui:ReactiveUserControl>

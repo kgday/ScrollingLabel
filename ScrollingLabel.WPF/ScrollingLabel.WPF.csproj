@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>ScrollingLabel.Views</RootNamespace>
+    <StartupObject>ScrollingLabel.WPF.App</StartupObject>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI" Version="13.2.10" />
+    <PackageReference Include="ReactiveUI.WPF" Version="13.2.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ScrollingLabel.Core\ScrollingLabel.Core.csproj" />
+    <ProjectReference Include="..\ScrollingLabel.Design\ScrollingLabel.Design.csproj" />
+  </ItemGroup>
+
+</Project>

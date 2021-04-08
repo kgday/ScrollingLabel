@@ -1,0 +1,32 @@
+<rxui:ReactiveUserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="ScrollingLabel.Views.CustomerView"
+             xmlns:vm="clr-namespace:ScrollingLabel.ViewModels;assembly=ScrollingLabel.Core"
+             xmlns:rxui="http://reactiveui.net"
+             xmlns:designVM="clr-namespace:ScrollingLabel.Design.ViewModels;assembly=ScrollingLabel.Design"
+             x:TypeArguments="vm:ICustomerListItemViewModel"
+             x:DataType="vm:ICustomerListItemViewModel"
+             x:CompileBindings="True"
+             mc:Ignorable="d" d:DesignWidth="600" Height="250"
+>
+  <Design.DataContext>
+    <designVM:CustomerListItemViewModelDesign/>
+  </Design.DataContext>
+  <Border BorderBrush="black" BorderThickness="1" Margin="2">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock Text="{Binding LevelDisplay}" Grid.Row="0" Grid.Column="2"  FontWeight="Bold" />
+      <TextBlock x:Name="CustomerName" Text="{Binding Name}" Grid.Row="0" Grid.RowSpan="2"   FontSize="16"  VerticalAlignment="Top" Grid.ColumnSpan="3" TextAlignment="Center"/>
+    </Grid>
+  </Border>
+</rxui:ReactiveUserControl>

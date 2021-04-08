@@ -1,0 +1,26 @@
+<rxui:ReactiveWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:ScrollingLabel.ViewModels;assembly=ScrollingLabel.Core"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:rxui="http://reactiveui.net"
+        x:TypeArguments="vm:IMainWindowViewModel"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ScrollingLabel.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        xmlns:designVM="clr-namespace:ScrollingLabel.Design.ViewModels;assembly=ScrollingLabel.Design" 
+        x:DataType="vm:IMainWindowViewModel"
+        x:CompileBindings="True"
+        Title="Customer List Scrolling Label" Height="450" Width="800">
+
+    <Design.DataContext>
+      <designVM:MainWindowViewModelDesign/>
+    </Design.DataContext>
+
+  <rxui:RoutedViewHost HorizontalContentAlignment="Stretch"
+                           VerticalContentAlignment="Stretch"
+                           Router="{Binding Router}"/>
+
+  <!--<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+
+</rxui:ReactiveWindow>
